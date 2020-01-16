@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LuzActivity"></activity>
+        <activity android:name=".todo_list.ToDoListActivity"></activity>
+        <activity android:name=".LuzActivity" />
         <activity android:name=".CalculadoraActivity" />
         <activity android:name=".NomeadorActivity" />
         <activity android:name=".ContadorActivity" />

@@ -3,7 +3,7 @@ package com.example.studyproject
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import com.example.studyproject.todo_list.ToDoListActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -34,6 +34,11 @@ class MainActivity : AppCompatActivity() {
 
         btnFluxoLuz.setOnClickListener {
             val intent = Intent(this, LuzActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnFluxoToDoList.setOnClickListener {
+            val intent = Intent(this, ToDoListActivity::class.java)
             startActivity(intent)
         }
     }
