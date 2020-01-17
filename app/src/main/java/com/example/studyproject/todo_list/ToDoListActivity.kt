@@ -2,6 +2,7 @@ package com.example.studyproject.todo_list
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.studyproject.R
 import kotlinx.android.synthetic.main.activity_to_do_list.*
@@ -23,19 +24,16 @@ class ToDoListActivity : AppCompatActivity() {
 
         configureRecyclerView()
 
-        btnBotao.setOnClickListener {
-            val titulo = edtTitulo.text.toString()
-            val descricao = edtDescricao.text.toString()
+        btnAdd.setOnClickListener {
+            AddToDoBottomSheet { toDo ->
 
-            val toDo = ToDo(titulo,descricao,false)
+                todoList.add(toDo)
 
-            todoList.add(toDo)
+                toDoAdapter.notifyDataSetChanged()
 
-            toDoAdapter.notifyDataSetChanged()
-
-            edtTitulo.setText("")
-            edtDescricao.setText("")
+            }.show(supportFragmentManager, "AddTodo")
         }
+
 
     }
 
